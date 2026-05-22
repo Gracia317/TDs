@@ -28,7 +28,7 @@ int main()
   max=T[0];
   for(i=0;i<N;i++)
   {
-    while(max<T[i])
+    if(max<T[i])
     {
       max=T[i];
     }
@@ -42,17 +42,16 @@ int main()
     }
   }
   for(i=0;i<N;i++)
-  {
-    for(j=0;j<N;j++)
     {
-      if(T[j]==0)//Effacer ensuite toutes les occurrences de la valeur 0 dans le tableau T et tasser les éléments restants.//
+      if(T[j]!=0)//Effacer ensuite toutes les occurrences de la valeur 0 dans le tableau T et tasser les éléments restants.//
       {
-      T[j]='0';
+      T[j]=T[i];
+      j+=i;
       }
     }
   }
   printf("Le tableau sans occurence 0:\n ");
-  for(i=0;i<N;i++)/*Copiez ensuite toutes les composantes strictement positives dans un deuxième tableau TPOS et toutes les valeurs strictement négatives dans un troisième tableau TNEG. Afficher les tableaux TPOS et TNEG.*/
+  for(i=0;i<j;i++)/*Copiez ensuite toutes les composantes strictement positives dans un deuxième tableau TPOS et toutes les valeurs strictement négatives dans un troisième tableau TNEG. Afficher les tableaux TPOS et TNEG.*/
   {
     printf("%d ",T[i]);
   }
