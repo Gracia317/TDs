@@ -1,4 +1,3 @@
-#include<stdio.h>
 /*Ecrire un algorithme qui calcule et affiche S=1! + 2! + 3! +…. +N!, où N est saisie au clavier.*/
 #include<stdio.h>
 /*int factorielle(int nombre)
