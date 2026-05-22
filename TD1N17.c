@@ -18,7 +18,6 @@ int main ()
 }*/
 
 #include<stdio.h>
-#include<math.h>
 
 float fact(int N);
 void recup(int *N);
@@ -47,7 +46,7 @@ float somme_fact(int N)
   int SOMME=0;
   for (i=1;i<=N;i++)
   {
-    SOMME=pow(fact(i),-1)+SOMME;
+    SOMME=1/(fact(i)+SOMME;
   }
   return(SOMME);
 }
@@ -59,7 +58,8 @@ void affiche(int f, int N)
 
 int main()
 {
-  int N, result, final;
+  int N, result;
+  float final;
   recup(&N);
   final=somme_fact(N);//resultat final
   affiche(N, final);
