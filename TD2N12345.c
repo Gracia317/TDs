@@ -44,10 +44,14 @@ int main()
   j=0;
   for(i=0;i<N;i++)
     {
-      if(T[j]!=0)//Effacer ensuite toutes les occurrences de la valeur 0 dans le tableau T et tasser les éléments restants.//
+      if(T[i]==0)
       {
-      T[j]=T[i];
-      j+=i;
+        for(j=i;j<N-1;j++)
+        {
+          T[j]=T[j+1];
+        }
+        N--;
+        i--;//Effacer ensuite toutes les occurrences de la valeur 0 dans le tableau T et tasser les éléments restants.//
       }
     }
   printf("Le tableau sans occurence 0:\n ");
