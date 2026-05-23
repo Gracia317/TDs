@@ -41,6 +41,7 @@ int main()
       printf("La valeur maximale est à la position %d\n\n",i);
     }
   }
+  j=0;
   for(i=0;i<N;i++)
     {
       if(T[j]!=0)//Effacer ensuite toutes les occurrences de la valeur 0 dans le tableau T et tasser les éléments restants.//
@@ -49,7 +50,6 @@ int main()
       j+=i;
       }
     }
-  }
   printf("Le tableau sans occurence 0:\n ");
   for(i=0;i<j;i++)/*Copiez ensuite toutes les composantes strictement positives dans un deuxième tableau TPOS et toutes les valeurs strictement négatives dans un troisième tableau TNEG. Afficher les tableaux TPOS et TNEG.*/
   {
