@@ -12,6 +12,8 @@ void maximum(int T[], int N);
 int zero(int T[] , int N);
 void posandneg(int T[], int N, int *TPOS, int *TNEG, int *npos,int *nneg);
 void afficheposneg(int N, int TPOS[], int TNEG[], int npos, int nneg);
+void inverse(int T[], int N) //n°5 inverser le tableau;
+
 
 void recupN(int *N)
 {
@@ -38,6 +40,25 @@ void affichetab(int T[], int N)
     printf("%d ", T[i]);
   }
   printf("\n");
+}
+
+
+void inverse(int T[], int N) //n°5 inverser le tableau
+{
+  int i, j;
+  int nb=N;
+  int tmp;
+  printf("Tab inverse:");
+  for (i=0; i<nb; i++)
+  {
+    for(j=0; j<N-1; j++)
+    {
+      tmp=T[j];
+      T[j]=T[j+1];
+      T[j+1]=tmp;
+    }
+    N--;
+  }
 }
 
 int somme(int T[], int N)
@@ -140,6 +161,8 @@ int main()
   int npos, nneg;
   recupVal(N, T);
   affichetab(T,N);
+  inverse(T, N);
+  affichetab(T, N);
   final=somme(T , N);
   affichesomme(N , final);
   maximum(T, N);
