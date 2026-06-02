@@ -5,11 +5,11 @@ manière suivante : 4 8 4 6 6 7 7 3 9.*/
 
 #include<stdio.h>
 
-void tableauEntre(int T[], int *N);//taille tableau N//
+void tableauEntre(int *T, int *N);//taille tableau N//
 void tritab(int T[], int N);
 void tableauSortie(int T[], int N);
 
-void tableauEntre(int T[],int *N)
+void tableauEntre(int *T,int *N)
 {
     int i;
     printf("entrez la taille de votre tableau");
@@ -22,7 +22,7 @@ void tableauEntre(int T[],int *N)
     printf("entrez les %d valeurs de votre tableau", *N);
     for (i=0;i<*N;i++)
     {
-        scanf("%d", &T[i]);
+        scanf("%d", (T+i));
     }
 }
 
