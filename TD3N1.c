@@ -12,46 +12,64 @@ void tableauSortie(int T[], int N);
 void tableauEntre(int T[],int *N)
 {
     int i;
-    printf("entrez la taille de votre tableau");
+    printf("entrez la taille de votre tableau: ");
     scanf("%d",N);
     while (*N <= 0 || *N > 20)
     {
         printf("Taille invalide, entrez une valeur entre 1 et 20 : ");
         scanf("%d", N);
     }
-    printf("entrez les %d valeurs de votre tableau", *N);
+    printf("entrez les %d valeurs de votre tableau: \n", *N);
     for (i=0;i<*N;i++)
     {
-        scanf("%d", &T[i]);
+        scanf("%d", T+i);
     }
 }
 
 void tritab(int T[], int N)
 {
-    int i, j;
-    int temp[20];
-    for (i=0;i<N;i++)
-    {
-        if (T[i] % 2 != 0)
-        {
-            temp[j]=T[i];
-            j++;
-        }   
-    }
+    int pairs[20];   
+    int impairs[20];
+    
+    int nbPairs = 0;  
+    int nbImpairs=0;
+    
+    int i;
+    
     for (i = 0; i < N; i++)
     {
-        T[i] = temp[i];
+        if (T[i] % 2 == 0)
+        {
+            pairs[nbPairs] = T[i];
+            nbPairs++;
+        }
+        else
+        {
+            impairs[nbImpairs] = T[i];
+            nbImpairs++;
+        }
+    }
+
+    for (i = 0; i < nbPairs; i++)
+    {
+        T[i] = pairs[i];
+    }
+
+    for (i = 0; i < nbImpairs; i++)
+    {
+        T[nbPairs + i] = impairs[i];
     }
 }
 
 void tableauSortie(int T[], int N)
 {
     int i;
-    printf("Votre tableau:");
+    printf("Votre tableau avec les pairs en premier:");
     for (i=0;i<N;i++)
     {
-        printf("%d", T[i] );
+        printf("%d ", T[i] );
     }
+    printf ("\n");
 }
 
 int main()
@@ -62,3 +80,4 @@ int main()
     tableauSortie(T, N);
     return (0);
 }
+
